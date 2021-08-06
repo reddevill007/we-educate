@@ -1,0 +1,184 @@
+/*  <=========== Navigation CSS ===========>  */
+#head{
+    background: #fff;
+}
+
+#head .nav{
+    width: 90vw;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#head .nav .nav-list ul li a{
+    color: gray;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    padding: 10px;
+    transition: all 1s ease;
+}
+
+#head .nav .nav-list ul li a::after{
+    position: absolute;
+    content: '';
+    left: 50%;
+    height: 1px;
+    width: 0;
+    bottom: 5px;
+    background-color: rgba(128, 128, 128, .7);
+    transition: all 0.3s ease;
+}
+
+#head .nav .nav-list ul li a.active::after{
+    width: 100%;
+    left: 0;
+}
+
+
+#head .nav .nav-list ul li a:hover::after{
+    width: 100%;
+    left: 0;
+}
+
+
+
+
+/* Contact Section */
+section.contact{
+    min-height: 100vh;
+    padding-top: 80px;
+    background: #e6e6e6;
+}
+
+section.contact .contact-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 30px;
+}
+
+section.contact .contact-container .left{
+    width: 30%;
+    margin: 0 auto;
+    flex-direction: column;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+section.contact .contact-container .left .contact-details{
+    width: 260px;
+    height: 178px;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+}
+
+section.contact .contact-container .left .contact-details i{
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    font-size: 30px;
+    color: #159957;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+section.contact .contact-container .left .contact-details .con-det{
+    word-break: break-all;
+}
+
+section.contact .contact-container .right{
+    width: 70%;
+}
+
+section.contact .contact-container .right .map{
+    /* filter: grayscale(100%); */
+    border: 2px solid rgb(209, 97, 23);
+}
+
+section.contact .contact-container .right h1{
+    font-size: 22px;
+    color: #159957;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+section.contact .contact-container .right p{
+    color: #383838;
+    margin: 10px 0;
+}
+
+section.contact .contact-container .right form textarea,
+section.contact .contact-container .right form input{
+    width: 100%;
+    height: 50px;
+    margin: 10px 0;
+    outline: none;
+    background-color: rgba(128, 128, 128, .3);
+    border: 2px solid #fff;
+    border-radius: 4px;
+    color: #fff;
+}
+
+section.contact .contact-container .right form textarea{
+    height: 200px;
+}
+
+
+section.contact .contact-container .right form textarea:focus,
+section.contact .contact-container .right form input:focus{
+    background-color: #fff;
+    padding: 10px;
+    color: gray;
+}
+
+section.contact .contact-container .right form textarea::placeholder,
+section.contact .contact-container .right form input::placeholder{
+    padding: 10px;
+}
+
+section.contact .contact-container .right form button{
+    padding: 10px;
+    margin-right: 20px;
+    width: 90px;
+    background-color: transparent;
+    border: 1.5px solid #fff;
+    color: #fff;
+    background-color: #159957;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+
+@media (max-width: 1000px) {
+
+    section.contact .contact-container{
+        flex-direction: column;
+    }
+
+    
+    section.contact .contact-container .right{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    section.contact .contact-container .left{
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+}

@@ -1,0 +1,84 @@
+/*  <=========== Navigation CSS ===========>  */
+#head{
+    background: #fff;
+}
+
+#head .nav{
+    width: 90vw;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#head .nav .nav-list ul li a{
+    color: gray;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    padding: 10px;
+    transition: all 1s ease;
+}
+
+#head .nav .nav-list ul li a::after{
+    position: absolute;
+    content: '';
+    left: 50%;
+    height: 1px;
+    width: 0;
+    bottom: 5px;
+    background-color: rgba(128, 128, 128, .7);
+    transition: all 0.3s ease;
+}
+
+#head .nav .nav-list ul li a.active::after{
+    width: 100%;
+    left: 0;
+}
+
+
+#head .nav .nav-list ul li a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+section.courses .course-tag ul{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+section.courses .course-tag ul li{
+    position:relative;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+section.courses .course-tag ul li::after {
+    content: '';
+    position: absolute;
+    width: 0px;
+    height: 2px;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(76, 240, 164);
+    transition: 0.4s ease;
+}
+
+section.courses .course-tag ul li:hover::after {
+    width: 100%;
+}
+
+section.courses .course-tag ul .active1::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(76, 240, 164);
+    transition: 0.4s ease;
+}

@@ -1,0 +1,213 @@
+/*  <=========== Navigation CSS ===========>  */
+#head{
+    background: #fff;
+}
+
+#head .nav{
+    width: 90vw;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#head .nav .nav-list ul li a{
+    color: gray;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    padding: 10px;
+    transition: all 1s ease;
+}
+
+#head .nav .nav-list ul li a::after{
+    position: absolute;
+    content: '';
+    left: 50%;
+    height: 1px;
+    width: 0;
+    bottom: 5px;
+    background-color: rgba(128, 128, 128, .7);
+    transition: all 0.3s ease;
+}
+
+#head .nav .nav-list ul li a.active::after{
+    width: 100%;
+    left: 0;
+}
+
+
+#head .nav .nav-list ul li a:hover::after{
+    width: 100%;
+    left: 0;
+}
+
+
+/* Blog Posts */
+section.blog-posts{
+    border-top: 1px solid #159957;
+    padding-top: 80px;
+    width: 100vw;
+}
+
+section.blog-posts .container{
+    width: 90vw;
+    margin: 0 auto;
+}
+
+section.blog-posts .posts{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 50px;
+    grid-gap: 50px;
+}
+
+section.blog-posts .posts.view-more{
+    display: none;
+}
+
+section.blog-posts .posts .post{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section.blog-posts .posts .post .post-img{
+    margin-bottom: 75px;
+    width: 350px;
+    height: 250px;
+    position: relative;
+}
+
+section.blog-posts .posts .post .post-img .post-content{
+    text-align: center;
+    border-radius: 2%;
+}
+
+section.blog-posts .posts .post .post-img:hover .post-content{
+    background: rgba(21, 153, 87, .9);
+}
+
+section.blog-posts .posts .post-img:hover .post-content .tag{
+    background: #fff;
+    border: 2px solid #159957;
+}
+
+section.blog-posts .posts .post-img:hover .post-content .tag h4{
+    color: #159957;
+}
+
+section.blog-posts .posts .post-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+section.blog-posts .posts .post-img .post-content{
+    position: absolute;
+    background: #fff;
+    width: 300px;
+    top: 63%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px 10px 10px 10px;
+}
+
+section.blog-posts .posts .post-img .post-content .tag{
+    background: #159957;
+    display: inline-block;
+    position: absolute;
+    top: -12%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+section.blog-posts .posts .post-img .post-content .tag h4{
+    color: #fff;
+    padding: 10px;
+    text-transform: uppercase;
+
+}
+
+section.blog-posts .posts .post-img .post-content h1{
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+section.blog-posts .posts .post-img .post-content p{
+    font-size: 16px;
+    color: rgba(0,0,0,0.5);
+    margin-bottom: 23px;
+}
+
+section.blog-posts .posts .post-img .post-content a{
+    color: #fff;
+    background: #191919;
+    padding: 5px;
+    text-align: center;
+    border: 2px solid transparent;
+    margin-bottom: 5px;
+}
+
+section.blog-posts .posts .post-img .post-content a:hover{
+    border: 2px solid #191919;
+    background: #fff;
+    color: #191919;
+}
+
+section.blog-posts .btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+section.blog-posts .btn span{
+    padding: 10px;
+    border: 2px solid transparent;
+    color: #fff;
+    background: #191919;
+    cursor: pointer;
+}
+
+section.blog-posts .btn span:hover{
+    padding: 10px;
+    border: 2px solid #191919;
+    color: #191919;
+    background: #fff;
+}
+
+
+
+@media (max-width: 1340px){
+
+    section.blog-posts .posts{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+}
+
+@media (max-width: 880px){
+
+    section.blog-posts .posts{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+}
+
+@media (max-width: 500px) {
+    section.blog-posts .posts .post .post-img{
+        width: 300px;
+    }
+    
+    section.blog-posts .posts .post .post-img .post-content{
+        width: 250px;
+    }
+}
+
+
+

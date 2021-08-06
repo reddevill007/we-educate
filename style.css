@@ -1,0 +1,1275 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;700;900&family=Chonburi&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+/*  <=========== Custom Cursor ===========>  */
+
+
+/* .cursor{
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.cursor::before{
+    content: '';
+    height: 20px;
+    width: 20px;position: absolute;
+    border-radius: 50%;
+    border: 4px solid #808080;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+ */
+
+
+
+
+
+
+:root{
+    --a: #F72585;
+    --b: #B5179E;
+    --c: #7209B7;
+    --d: #560BAD;
+    --e: #480CA8;
+    --f: #3A0CA3;
+    --g: #4361EE;
+    --h: #4895EF;
+    --i: #4CC9F0;
+    --font1: 'Chonburi', cursive;
+    --font2: 'Chivo', sans-serif;
+}
+
+/*  <=========== Utility Classes ===========>  */
+
+.heading{
+    text-align: center;
+    padding: 20px 0;
+    padding-bottom: 30px;
+}
+
+.heading h1{
+    font-size: 38px;
+    font-weight: 600;
+    color: #159957;
+    letter-spacing: 2px;
+}
+
+.heading h1 span{
+    background: rgba(76, 240, 164, .3);
+    color: rgb(58, 57, 57);
+    padding: 6px 10px;
+}
+
+.container{
+    width: 90vw;
+    margin: 0 auto;
+}
+
+a.btn{
+    padding: 6px 10px;
+    background-color: #2e2828;
+    margin-right: 30px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+}
+
+a.btn::after{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    content: '';
+    border: 2px solid #fff;
+    top: -8px;
+    left: -8px;
+}
+
+body{
+    font-family: var(--font2);
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+.preloader {
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.preloader .innerloader{
+    height: 82px;
+    width: 82px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    animation: rotate 2s infinite linear;
+    position: relative;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+}
+
+@keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.preloader .loader{
+    width: 80px;
+    height: 80px;
+    position: absolute;
+}
+
+.preloader .loader img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+
+/*  <=========== Popup CSS ===========>  */
+.popup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 1000;
+    height: 100vh;
+    width: 100vw;
+    backdrop-filter: blur(2px);
+}
+
+.pop-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup .pop-container .popup-box{
+    position: relative;
+    height: fit-content;
+    background: #fff;
+    max-width: 60%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+}
+
+.popup .pop-container .popup-box .discount{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #fff; */
+    background-color: rgba(76, 240, 164, .3);
+    padding: 10px;
+}
+
+.popup .pop-container .popup-box .discount h1{
+    font-size: 45px;
+    color: #159957;
+    padding: 10px;
+}
+
+.popup .pop-container .popup-box .timer{
+    padding: 20px;
+    background-color: rgba(76, 240, 164, .45);
+    display: flex;
+    justify-content: center;
+}
+
+.popup .pop-container .popup-box .timer p{
+    text-align: center;
+}
+
+.popup .pop-container .popup-box .details{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(76, 240, 164, .7);    padding: 20px;
+}
+
+.popup .pop-container .popup-box .details p{
+    text-align: center;
+    line-height: 1.3;
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.popup .pop-container .popup-box .details a.btn{
+    padding: 6px 16px;
+    color: #fff;
+
+}
+
+.popup .pop-container .popup-box .details a.btn::after{
+    border-color: #ffffff;
+}
+
+.popup .pop-container .popup-box .close{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    height: 40px;
+    width: 40px;
+    background: rgba(76, 240, 164, .7);
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup .pop-container .popup-box .close img{
+    height: 10px;
+    width: 10px;
+}
+
+@media only screen and (max-width:550px){
+   .popup .pop-container .popup-box{
+        max-width: 80%;
+    }
+}
+
+@media only screen and (max-width:400px){
+
+   .popup .pop-container .popup-box .close{
+        top: 10px;
+        right: 10px;
+    }
+
+    .popup .pop-container .popup-box .discount h1{
+        font-size: 30px;
+    }
+}
+
+
+/*  <=========== Navigation CSS ===========>  */
+#head{
+    /* background-color: red; */
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 999;
+    box-shadow: 0 2px 20px 0 rgba(0, 0, 0, .2);
+}
+
+#head .nav{
+    width: 90vw;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+}
+
+#head .nav .logo img{
+    height: 50px;
+}
+
+#head .nav .nav-list ul{
+    display:flex;
+    justify-content: space-around;
+}
+
+#head .nav .nav-list ul li{
+    list-style: none;
+    margin-left: 40px;
+}
+
+#head .nav .nav-list ul li a{
+    color:white;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    padding: 10px;
+    transition: all 1s ease;
+}
+
+#head .nav .nav-list ul li a::after{
+    position: absolute;
+    content: '';
+    left: 50%;
+    height: 1px;
+    width: 0;
+    bottom: 5px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+#head .nav #nav-list.active ul li a{
+    color:gray;
+    /* position: relative; */
+}
+
+#head .nav .nav-list.active ul li a::after{
+    position: absolute;
+    content: '';
+    left: 50%;
+    height: 1px;
+    width: 0;
+    bottom: 5px;
+    background-color: rgba(128, 128, 128, .7);
+    transition: all 0.3s ease;
+}
+
+#head .nav .nav-list ul li a:hover::after{
+    width: 100%;
+    left: 0;
+}
+
+#head .nav .nav-list ul li a.active::after{
+    width: 100%;
+    left: 0;
+}
+
+#t-box{
+    display: none;  
+}
+
+#mob-list{
+    display: none;
+}
+
+/*  <=========== Mobile Nav CSS ===========>  */
+@media (max-width: 922px) {
+
+    #head{
+        display: none;
+    }
+
+    #t-box{
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        z-index: 100;
+    }
+
+    #toggle{
+        height: 8px;
+        width: 8px;
+        background-color: rgba(6, 19, 92, 0.75);
+        border-radius: 50%;
+        position: relative;
+    }
+
+    #toggle.active{
+        height: 4px;
+        width: 40px;
+        background: #fff;
+        position: relative;
+        z-index: 100;
+        transform: rotate(-45deg);
+        border-radius: 0;
+    }
+
+    #toggle::before{
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 13px;
+        border-radius: 50%;
+        background-color: inherit;
+    }
+    
+    #toggle.active::before{
+        display: none;
+    }
+
+    #toggle::after{
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: -13px;
+        border-radius: 50%;
+        background-color: inherit;
+    }
+
+    #toggle.active::after{
+        position: absolute;
+        content: '';
+        width: 40px;
+        height: 4px;
+        left: 0;
+        top: 0px;
+        border-radius: 0;
+        transform: rotate(90deg);
+        background-color: inherit;
+    }
+    
+    #mob-list{
+        background: #159957;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(#155799, #159957);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(#155799, #159957); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        padding: 20px;
+        position: fixed;
+        width: fit-content;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 100vw;
+        z-index: 99;
+        display: none;
+    }
+    
+    #mob-list.active{
+        display: block;
+    }
+    
+    #mob-list.active ul{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    #mob-list.active ul a{
+        font-size: 30px;
+        color: #fff;
+    }
+
+    #mob-list.active ul li a::before{
+        content: 'Home';
+        position: absolute;
+        font-size: 24vh;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: .3;
+        display: none;
+        z-index: -1;
+    }
+
+    #mob-list.active ul li:hover a::before{
+        display: block;
+    }
+
+    #mob-list.active ul li:nth-child(1) a::before{
+        content: 'Home';
+    }
+
+    #mob-list.active ul li:nth-child(2) a::before{
+        content: 'About';
+    }
+
+    #mob-list.active ul li:nth-child(3) a::before{
+        content: 'Services';
+    }
+
+    #mob-list.active ul li:nth-child(4) a::before{
+        content: 'Courses';
+    }
+
+    #mob-list.active ul li:nth-child(5) a::before{
+        content: 'Testimonial'
+    }
+
+    #mob-list.active ul li:nth-child(6) a::before{
+        content: 'Contact';
+    }
+}
+
+
+/*  <=========== Home Section CSS ===========>  */
+section.home{
+    background: #159957;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(#155799, #159957);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(#155799, #159957); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    max-width: 100vw;
+}
+
+section.home .container{
+    min-height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+section.home .hero-content{
+    width: 50%;
+}
+
+section.home .hero-content h3{
+    color: #fff;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    padding: 10px;
+    background: rgba(76, 240, 164, .3);
+    /* border-radius: 4px; */
+    width: fit-content;
+}
+
+section.home .hero-content h1{
+    color: #4cf0a4;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 40px;
+}
+
+section.home .hero-content p{
+    line-height: 1.5;
+    color: #b8b5b5;
+    margin-bottom: 28px;
+    padding: 6px;
+}
+
+section.home .hero-content .btn-box{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+section.home .hero-content .btn-box div{
+    transition: all .5s ease;
+}
+
+section.home .hero-content .btn-box a{
+    padding: 6px 10px;
+    background-color: #2e2828;
+    margin-right: 30px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+}
+
+section.home .hero-content .btn-box a::after{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    content: '';
+    border: 2px solid #fff;
+    top: -8px;
+    left: -8px;
+}
+
+section.home .hero-content .btn-box div:hover{
+    transform: translatey(-6px);    
+}
+
+section.home .hero-img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+section.home .hero-img img{
+    width: 100%;
+}
+
+@media (max-width: 900px) {
+
+    section.home{
+        padding: 30px;
+    }
+    
+    section.home .hero-content{
+        width: 100%;
+    }
+
+    section.home .hero-content .btn-box div{
+        margin-bottom: 30px;
+    }
+
+}
+
+@media (max-width: 780px) {
+
+    section.home .hero-img{
+        display: none;
+    }
+
+    section.home .hero-content{
+        width: 80%;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    section.home{
+        overflow: hidden;
+    }
+
+    section.home .hero-content h3{
+        font-size: 18px;
+    }
+
+    section.home .hero-content h1{
+        font-size: 30px;
+    }
+
+}
+
+@media (max-width: 300px) {
+    
+    section.home .hero-content h3{
+        font-size: 15px;
+    }
+
+}
+
+
+/*  <=========== Courses CSS ===========>  */
+section.courses{
+    min-height: 100vh;
+    padding: 70px 0;
+}
+
+section.courses .course-tag{
+    margin-top: 20px;
+}
+
+section.courses .course-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+section.courses .course-container .course-box{
+    width: 360px;
+    margin-bottom: 30px;
+    background: #fff;
+    color: #000;
+    padding: 20px;
+    border-radius: 4px;
+    /* box-shadow: 0px 0px 4px gray; */
+    border: 2px solid #f8f8f8;
+    box-shadow: 10px 10px 5px 0px rgba(83, 83, 83, 0.75);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(83, 83, 83, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(83, 83, 83, 0.75);
+    align-items: center;
+}
+
+section.courses .course-container .course-box .im-tag{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+section.courses .course-container .course-box .im-tag .course-img{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section.courses .course-container .course-box .im-tag .course-img img{
+    width: 100%;
+    object-fit: cover;
+    margin: 0 auto;
+    /* border-radius: 50%; */
+    border: 2px solid #159957;
+}
+
+section.courses .course-container .course-box .details .tags{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+section.courses .course-container .course-box .details .tags .tag{
+    background: rgba(215, 240, 76, 0.8);
+    padding: 3px 6px;
+    margin-bottom: 7px;
+    margin-right: 8px;
+    font-size: 13px;
+    color: #797878;
+}
+
+section.courses .course-container .course-box .details h1{
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+section.courses .course-container .course-box .details h1 a{
+    color: #159957;
+}
+
+section.courses .course-container .course-box .details .duration{
+    background-color: rgba(76, 240, 164, .3);
+    width: fit-content;
+    padding: 3px 6px;
+    color: #797878;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+section.courses .course-container .course-box .details p{
+    line-height: 1.3;
+    font-weight: 400;
+    color: #797878;
+    margin-bottom: 10px;
+}
+
+section.courses .course-container .course-btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section.courses .course-container .course-btn .price{
+    color: #797878;
+    background-color: rgba(76, 240, 164, .3);
+    padding: 5px 7px;
+}
+
+section.courses .course-container .course-btn .price span{
+    font-size: 10px;
+    margin-left: 8px;
+    font-weight: 300;
+    position: relative;
+}
+
+section.courses .course-container .course-btn .price span::before{
+    position: absolute;
+    content: '';
+    background-color: #5a5959;
+    height: 1px;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+}
+
+section.courses .course-container .course-btn a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 50px;
+    height:50px;
+    line-height: 50px;
+    border-radius: 50%;
+    border:0;
+    background-color: transparent;
+    transition: 0.48s ease;
+}
+
+section.courses .course-container .course-btn a i{
+    transform: rotate(90deg);
+    font-size: 20px;
+    color: #000;
+}
+
+section.courses .course-container .course-btn a:hover{
+    background-color: rgba(76, 240, 164, .3);
+}
+
+section.courses .show-more{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section.courses .show-more a{
+    background-color: transparent;
+    /* background-color: #635959; */
+    padding: 6px 10px;
+    padding-right: 0;
+    font-size: 16px;
+    transition: .3s ease;
+}
+
+section.courses .show-more a i{
+    background: rgba(76, 240, 164, .7);
+    padding: 7px 10px;
+    margin-left: 4px;
+    clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+section.courses .show-more a:hover i{
+    background: #fff;
+}
+
+section.courses .show-more a:hover{
+    background: rgba(76, 240, 164, .7);
+}
+
+@media (max-width: 1200px) {
+    section.courses .course-container  .course-box{
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 420px) {
+    section.courses .course-container  .course-box{
+        width: 300px;
+    }
+}
+
+@media (max-width: 320px) {
+    section.courses .course-container  .course-box{
+        width: 250px;
+    }
+}
+
+/*  <=========== Features Section CSS ===========>  */
+section.feature{
+    background-color: #f7f9fa;
+    padding: 50px 0;
+}
+
+.ft-box{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+    flex-wrap: wrap;
+}
+
+.ft-box .feat{
+    background: #e5ebf1;
+    box-shadow: 10px 10px 5px 0px rgba(83, 83, 83, 0.75);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(83, 83, 83, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(83, 83, 83, 0.75);
+    height: 150px;
+    width: 350px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    text-align: center;
+}
+
+.ft-box .feat .ft-icon i{
+    font-size: 40px;
+    color: #159957;
+    background-color: transparent;
+    margin-bottom :15px;
+}
+
+@media only screen and (max-width: 1250px){
+    
+    .feat{
+       margin-bottom: 30px;
+    }
+    
+}
+
+
+/*  <=========== Testimonial CSS ===========>  */
+.hero{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+.review-box{
+    width: 90%;
+    max-width: 700px;
+    height: 300px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 10px 10px 40px rgba(95, 97, 96, 0.25);
+    position: relative;
+    overflow: hidden;
+    margin-top: 50px;
+    background: #ecfcf5;
+}
+
+.card{
+    height: 300px;
+    padding: 40px;
+    color: #777;
+    line-height: 22px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.card::before{
+    content: '';
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    background: #159957;
+    border-bottom-right-radius: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.card .profile{
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.card .profile img{
+    width: 70px;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+.card .profile h3{
+    font-size: 26px;
+    color: #159957;
+    margin-bottom: 8px;
+}
+
+#slide{
+    width: 100%;
+    padding-right: 60px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+}
+
+.sidebar{
+    width: 60px;
+    height: 100%;
+    padding: 15px 0;
+    background: #159957;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidebar .icon{
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    background: #fbfbff;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.sidebar .icon i{
+    color: #159957;
+}
+
+@media only screen and (max-width:370px){
+
+.card p{
+    font-size: 13px;
+}  
+}
+
+/*  <=========== Footer Section CSS ===========>  */
+footer{
+    background: #cfeee1;
+    padding: 50px 0;
+    padding-bottom: 0;
+    overflow-x: hidden;
+    width: 100vw;
+}
+
+footer h1{
+    color: #159957;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+}
+
+footer .container{
+    padding-bottom: 60px;
+}
+
+footer p{
+    text-align: center;
+    color: #777;
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+.letter form{
+    display: flex;
+    border-top: 1px solid rgb(87, 86, 86);
+    border-bottom: 1px solid rgb(87, 86, 86);
+    align-items: center;
+    justify-content: center;
+    width: 80vw;
+    margin: 0 auto;
+}
+
+.letter .news1{
+    border-right: 1px solid rgb(87, 86, 86);
+    padding: 20px;
+}
+
+.letter .news1 input{
+    width: 60vw;
+    height: 45px;
+    padding: 0 6px;
+    font-family: 'Chivo', sans-serif;
+    outline: none;
+    border-radius: 3px;
+    font-size: 18px;
+    background-color: #efefef;
+    border: 0;
+}
+
+.letter .news2{
+    padding: 20px;
+}
+
+.letter .news2 button{
+    padding: 5px;
+    font-size: 19px;
+    color: #159957;
+    border: 0;
+    height: 45px;
+    width: 140%;
+    cursor: pointer;
+}
+
+.letter .news2 button i{
+    margin-left: 8px;
+}
+
+footer .foot{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+}
+
+footer .foot .icon-box{
+    display: flex;
+    justify-content: space-evenly;
+    width: 40%;
+    height: 30%;
+    padding: 20px;
+    padding-bottom: 0;
+}
+
+footer .foot .icon-box .icon{
+    font-size: 25px;
+    background-color: white;
+    width: 40px;
+    border-radius: 50%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .foot .icon-box .icon a{
+    color: #159957;
+    transition: 0.5s ease;
+}
+
+footer .foot .icon-box .icon a:hover{
+    transform: rotate(360deg);
+}
+
+footer .quick-links{
+    width: 100%;
+    padding: 20px;
+}
+
+footer .quick-links ul{
+    width: 40%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+footer .quick-links ul li a{
+    position: relative;
+    color: gray;
+    padding: 2px 0;
+}
+
+footer .quick-links ul li a::after{
+    position: absolute;
+    content: '';
+    left: 50%;
+    height: 1px;
+    width: 0;
+    bottom: 0px;
+    background-color: gray;
+    transition: all 0.3s ease;
+}
+
+
+footer .quick-links ul li a:hover::after{
+    width: 100%;
+    left: 0;
+}
+
+footer .copyright{
+    width: 100vw;
+    height: fit-content;
+    background-color: #159957;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+footer .copyright p{
+    color: #fff;
+    margin-bottom: 0;
+    line-height: 1.5;
+    padding: 10px 0;
+}
+
+@media (max-width: 870px){
+
+    .letter form{
+        flex-direction: column;
+    }
+
+    .letter .news1{
+        border-color: transparent;
+        border-bottom: 1px solid rgb(87, 86, 86);
+    }
+
+    footer .foot .icon-box,
+    footer .quick-links ul{
+        width: 80%;
+    }
+
+    footer .copyright p{
+        max-width: 30ch;
+    }
+
+}
+
+@media (max-width: 370px){
+
+    footer .foot .icon-box,
+    footer .quick-links ul{
+        width: 90%;
+    }
+
+}
+
+
+/*  <=========== Scroll Bar CSS ===========>  */
+.scroll-btn {
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background: #159957;
+    right: 30px;
+    bottom: 55px;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    font-size: 30px;
+    border-bottom-width: 2px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    z-index: 10;
+    display: none;
+}
+
+.scroll-btn::before{
+    position: absolute;
+    content: '';
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    width: 95%;
+    background: #159957;
+}
+
+.scroll-btn:hover {
+    color: #159957;
+    background: transparent;
+    border: 2px solid #159957;
+}
+
+
+/*  <=========== Scroll Bar CSS ===========>  */
+::-webkit-scrollbar-track
+{
+	box-shadow: inset 0 0 6px #0000004d;
+	background-color: #fff;
+}
+
+::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #fff;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background-color: #4cf0a4;
+    border-radius: 10px;
+}
+
+
+/*  <=========== Selection CSS ===========>  */
+::selection{
+    background: rgba(76, 240, 164, .3);
+    color: #fff;
+}
+
+
+  
