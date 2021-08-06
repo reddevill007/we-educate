@@ -75,7 +75,7 @@ window.addEventListener('scroll', () => {
     else {
         header.style.background = "transparent";
         navList.classList.remove('active');
-        logo.src = "IMAGE/logo3.png";
+        logo.src = "logo3.png";
     }
 });
 
