@@ -497,7 +497,7 @@ body{
     }
 
     #mob-list.active ul li:nth-child(3) a::before{
-        content: 'Services';
+        content: 'Blog';
     }
 
     #mob-list.active ul li:nth-child(4) a::before{
