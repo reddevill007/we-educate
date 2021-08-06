@@ -69,7 +69,7 @@ const logo = document.getElementById("logo");
 window.addEventListener('scroll', () => {
     if (window.pageYOffset > 10) {
         header.style.background = "white";
-        logo.src = "IMAGE/logo.png";
+        logo.src = "logo.png";
         navList.classList.add("active");
     }
     else {
